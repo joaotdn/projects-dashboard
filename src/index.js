@@ -18,7 +18,7 @@ WebFontLoader.load({
 ReactDOM.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <Route path="/emitter/:emitter_id" component={Dashboard} />
+            <Route path="/emissor/:emitter_id" component={Dashboard}></Route>
         </Route>
     </Router>
 ), document.getElementById('root'));
