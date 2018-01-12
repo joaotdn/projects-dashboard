@@ -1,0 +1,10 @@
+@import 'globals';
+@include react-md-everything;
+
+// List
+.list-emitters {
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
