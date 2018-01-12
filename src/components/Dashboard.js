@@ -2,41 +2,30 @@ import React, {PureComponent} from 'react';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
-import { NavigationDrawer, ListItem } from 'react-md';
+import { NavigationDrawer, ListItem, Drawer } from 'react-md';
 import DashboardContent from './DashboardContent';
 
 class Dashboard extends PureComponent {
-    constructor() {
-        super();
-
-        this.state={
-            renderNode: null,
-            visible: false
-        };
-    }
-
-    show() {
-        this.setState({ visible: true });
-    }
-
-    hide() {
-        this.setState({ visible: false, renderNode: null });
-    }
-
     render() {
-        const { visible, renderNode } = this.state;
         return (
             <div>
-                <NavigationDrawer renderNode={renderNode}
-                                  toolbarTitle="Painel de projetos"
+                <NavigationDrawer toolbarTitle="Painel de projetos"
                                   drawerTitle="Emissores"
                                   navClassName="list-emitters"
+                                  defaultMedia="desktop"
+                                  desktopType={Drawer.DrawerTypes.PERSISTENT}
                                   navItems={this.props.emitters.map((emitter) => (
                                       <li key={emitter.id}>
                                           <ListItem itemComponent={Link}
                                                     primaryText={emitter.name}
+                                                    activeClassName="md-list-title--active"
                                                     itemProps={{
-                                                        to: "/emitter/" + emitter.id
+                                                        to: "/emitter/" + emitter.id,
+                                                        activeStyle: {
+                                                            backgroundColor: "#f1f1f1",
+                                                            display: 'inline-block',
+                                                            width: '100%'
+                                                        },
                                                     }}/>
                                       </li>
                                   ))}>

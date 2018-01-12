@@ -5,7 +5,7 @@ class DashboardContent extends PureComponent {
     render () {
         return (
             <div>
-                {this.props.emitter_id}
+
             </div>
         );
     }
